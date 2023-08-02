@@ -14,3 +14,25 @@ body
 background-image: url("galacticfireworks.webp");
 background-repeat:no=repeat;
 }
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle box-shadow */
+    transition: background-color 0.3s ease; /* Optional: Smooth transition on hover */
+
+    /* Optional: Add hover styles to make it interactive */
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #0056b3; /* Button color on hover */
+}

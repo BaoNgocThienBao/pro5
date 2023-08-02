@@ -9,6 +9,10 @@ width: 70vw;
 height: 50vh;
 background-color: rgba(128, 128, 128, 0.2);
 }
+div>a
+{
+    visibility:hidden;
+}
 body
 {
 background-image: url("galacticfireworks.webp");

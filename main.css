@@ -17,12 +17,10 @@ background-repeat:no=repeat;
 a {
     text-decoration: none;
     color: inherit;
-}
-a {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 5px;
-    background-color: #007bff; /* Button color */
+    background-color: rgba(255, 255, 0, 0.3); /* Button color */
     color: white; /* Text color */
     font-size: 16px;
     font-weight: bold;

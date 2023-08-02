@@ -6,7 +6,7 @@ flex-wrap:no-wrap;
 align-items:center;
 margin: auto;
 width: 70vw;
-height: 50vh;
+height: fit-content;
 background-color: rgba(128, 128, 128, 0.2);
 }
 div>a

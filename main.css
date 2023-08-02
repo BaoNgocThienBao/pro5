@@ -9,4 +9,5 @@ body
 {
 background-image: url("galacticfireworks.webp");
 background-size:contain;
+background-repeat:no=repeat;
 }

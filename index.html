@@ -8,9 +8,6 @@
     <script src="https://kit.fontawesome.com/01d6b0b229.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="main.css" />
-    <script>
-        ScrollReveal({ reset: true });
-    </script>
 </head>
               <body>
                 <main>
@@ -24,6 +21,10 @@
                     </div>
                 </main>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-    <script src="main.js"></script>
+    <script>
+        ScrollReveal({ reset: true,distance:'60px',duration:2500,delay:400 });
+        ScrollReveal().reveal('.left', { delay:500, origin: 'left'});
+        ScrollReveal().reveal('.right', { delay:500, origin: 'right'});
+    </script>
               </body>
 </html>

@@ -33,6 +33,17 @@ body
 background-image: url("galacticfireworks.webp");
 background-repeat:no=repeat;
 }
+h1
+{
+ font-size: 3em;
+}
+p
+{
+font-family: monospace;
+text-shadow: 0 0 black;
+text-align: center;
+font-size:1.3em;
+}
 .img-personal
 {
 width:100px;

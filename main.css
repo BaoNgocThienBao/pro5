@@ -12,7 +12,8 @@ background-color: rgba(128, 128, 128, 0.2);
 .two-column
 {
 display:grid;
-grid-template-columns: auto auto;  
+grid-template-columns: auto auto;
+    gap:20px;
 }
 div>a
 {

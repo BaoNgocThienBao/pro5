@@ -5,15 +5,15 @@ flex-direction:column;
 flex-wrap:no-wrap;
 align-items:center;
 margin: auto;
-width: 70vw;
-height: 90cap;
-background-color: rgba(128, 128, 128, 0.2);
+width: auto;
+height: auto;
 }
 .two-column
 {
 display: grid;
 grid-template-columns: auto auto;
 gap:20px;
+background-color: rgba(128, 128, 128, 0.2);
 }
 div>a
 {

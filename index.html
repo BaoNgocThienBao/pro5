@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile cua Baooo/bzzz</title>
     <script src="https://kit.fontawesome.com/01d6b0b229.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -27,7 +26,7 @@
                             </div>
                         </div>
                         <div class="right">
-                            <video width="400" height="500" autoplay loop preload="auto">
+                            <video id="autoplayVideo" width="400" height="500" autoplay loop preload="auto" muted>
                                     <source src="poppin.mp4" type="video/mp4">
                             </video>
                         </div>
@@ -38,5 +37,12 @@
         ScrollReveal({distance:'60px',duration:2500,delay:400 });
         ScrollReveal().reveal('.left', { delay:500, origin: 'left'});
     </script>
-              </body>
+    <script>
+        const video = document.getElementById("autoplayVideo");
+        function unmuteVideo() {
+            video.removeAttribute("muted");
+        }
+        setTimeout(unmuteVideo, 1000);
+    </script>
+    </body>
 </html>

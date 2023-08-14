@@ -8,6 +8,13 @@ margin: auto;
 width: auto;
 height: auto;
 }
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the body takes up at least the viewport height */
+  }
 .icon
 {
 display:flex;
@@ -20,9 +27,6 @@ display: grid;
 grid-template-columns: auto auto;
 gap:20px;
 background-color: rgba(128, 128, 128, 0.2);
-position: absolute;
-top: 20%;
-left: 15%;
 }
 div>a
 {

@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="right">
-                            <video width="400" height="500" autoplay loop>
+                            <video width="400" height="500" autoplay loop preload="auto">
                                     <source src="poppin.mp4" type="video/mp4">
                             </video>
                         </div>
@@ -35,7 +35,7 @@
                 </main>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <script>
-        ScrollReveal({ reset: true,distance:'60px',duration:2500,delay:400 });
+        ScrollReveal({distance:'60px',duration:2500,delay:400 });
         ScrollReveal().reveal('.left', { delay:500, origin: 'left'});
     </script>
               </body>

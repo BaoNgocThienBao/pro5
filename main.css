@@ -101,4 +101,8 @@ a:active {
         {
         font-size: 3.3em;
         }
+    .container-information
+        {
+        width:min-content;
+        }
 }

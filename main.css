@@ -14,6 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Ensure the body takes up at least the viewport height */
+    min-width: 100vw; /* Ensure the body takes up at least the viewport width */
   }
 .icon
 {
@@ -46,7 +47,7 @@ p
 font-family: monospace;
 text-shadow: 0 0 black;
 text-align: center;
-font-size:1.3em;
+font-size:1.4em;
 }
 .img-personal
 {

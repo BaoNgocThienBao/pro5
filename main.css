@@ -84,3 +84,13 @@ a:hover {
 a:active {
   transform: scale(1.2);
 }
+/* media screen */
+@media screen and (max-width: 580px) {
+ .two-column
+{
+display: grid;
+grid-template-columns: auto;
+gap:20px;
+background-color: rgba(128, 128, 128, 0.2);
+}
+}

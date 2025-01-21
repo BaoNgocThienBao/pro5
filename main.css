@@ -87,10 +87,21 @@ a:active {
 /* media screen */
 @media screen and (max-width: 580px) {
  .two-column
-{
-display: grid;
-grid-template-columns: auto;
-gap:20px;
-background-color: rgba(128, 128, 128, 0.2);
-}
+        {
+            display: grid;
+            grid-template-columns: auto;
+            gap:20px;
+            background-color: rgba(128, 128, 128, 0.2);
+        }
+    h1
+        {
+        font-size: 0.2vw;
+        }
+    p
+        {
+        font-family: monospace;
+        text-shadow: 0 0 black;
+        text-align: center;
+        font-size:0.2vw;
+        }
 }

@@ -95,13 +95,10 @@ a:active {
         }
     h1
         {
-        font-size: 0.2vw;
+        font-size:3.3em;
         }
     p
         {
-        font-family: monospace;
-        text-shadow: 0 0 black;
-        text-align: center;
-        font-size:0.2vw;
+        font-size: 3.3em;
         }
 }

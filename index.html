@@ -40,10 +40,27 @@
                 
                 <div class="card-right">
                     <div class="video-wrapper">
-                        <video autoplay loop preload="auto" muted>
-                            <source src="Phuong_Tet.mp4" type="video/mp4">
+                        <video id="bgVideo" autoplay loop preload="auto" muted>
+                            <source src="Music.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
+                        <div class="video-controls">
+                            <button id="playBtn" class="control-btn" title="Play">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button id="pauseBtn" class="control-btn" title="Pause">
+                                <i class="fas fa-pause"></i>
+                            </button>
+                            <button id="muteBtn" class="control-btn" title="Mute">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                            <button id="unmuteBtn" class="control-btn" title="Unmute" style="display:none;">
+                                <i class="fas fa-volume-mute"></i>
+                            </button>
+                            <button id="fullscreenBtn" class="control-btn" title="Fullscreen">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -52,9 +69,50 @@
     
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <script>
+        // ScrollReveal animations
         ScrollReveal({distance: '60px', duration: 2500, delay: 400});
         ScrollReveal().reveal('.profile-card', {delay: 500, origin: 'bottom'});
         ScrollReveal().reveal('.profile-image', {delay: 600, scale: 0.85});
+
+        // Video control functionality
+        const video = document.getElementById('bgVideo');
+        const playBtn = document.getElementById('playBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const muteBtn = document.getElementById('muteBtn');
+        const unmuteBtn = document.getElementById('unmuteBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+        playBtn.addEventListener('click', () => {
+            video.play();
+            playBtn.style.display = 'none';
+            pauseBtn.style.display = 'flex';
+        });
+
+        pauseBtn.addEventListener('click', () => {
+            video.pause();
+            pauseBtn.style.display = 'none';
+            playBtn.style.display = 'flex';
+        });
+
+        muteBtn.addEventListener('click', () => {
+            video.muted = true;
+            muteBtn.style.display = 'none';
+            unmuteBtn.style.display = 'flex';
+        });
+
+        unmuteBtn.addEventListener('click', () => {
+            video.muted = false;
+            unmuteBtn.style.display = 'none';
+            muteBtn.style.display = 'flex';
+        });
+
+        fullscreenBtn.addEventListener('click', () => {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            }
+        });
     </script>
 </body>
 </html>

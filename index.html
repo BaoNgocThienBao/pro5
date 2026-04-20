@@ -3,40 +3,58 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile cua Baooo/bzzz</title>
+    <title>Profile - About Me</title>
     <script src="https://kit.fontawesome.com/01d6b0b229.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="main.css" />
 </head>
-              <body>
-                <main>
-                    <div class="two-column">
-                        <div class="left">
-                            <div class="container-information">
-                                <h1 class="h1">About meeeee</h1>
-                                <img class="img-personal" src="myface.jpg">
-                                <p>I'm 21 now</p>
-                                <p>I'm a Vietnamese and i'm now studying at Dong Nai Technology University(DNTU)</p>
-                                <div class="icon">
-                                <a href="https://www.facebook.com/thienbao.baongoc/"><i class="fa-brands fa-facebook"></i></a>
-                                <a href="https://www.instagram.com/kinda.mt/"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="https://twitter.com/YikeBaohere"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="https://www.twitch.tv/trumxebaonhe1"><i class="fa-brands fa-twitch"></i></a>
-                                </div>
-                            </div>
+<body>
+    <main>
+        <div class="container">
+            <div class="profile-card">
+                <div class="card-left">
+                    <div class="profile-section">
+                        <div class="image-wrapper">
+                            <img class="profile-image" src="myface.jpg" alt="Profile Picture">
                         </div>
-                        <div class="right">
-                            <video width="400" height="500" autoplay loop preload="auto" muted controls >
-                                    <source src="Phuong_Tet.mp4
-                                        " type="video/mp4">
-                            </video>
+                        <h1 class="profile-name">About Me</h1>
+                        <p class="profile-subtitle">21 years old</p>
+                        <p class="profile-description">Vietnamese student at Dong Nai Technology University (DNTU). Passionate about technology and creative projects.</p>
+                        
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/thienbao.baongoc/" class="social-icon facebook" title="Facebook" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/kinda.mt/" class="social-icon instagram" title="Instagram" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://twitter.com/YikeBaohere" class="social-icon twitter" title="Twitter" aria-label="Twitter">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="https://www.twitch.tv/trumxebaonhe1" class="social-icon twitch" title="Twitch" aria-label="Twitch">
+                                <i class="fa-brands fa-twitch"></i>
+                            </a>
                         </div>
                     </div>
-                </main>
+                </div>
+                
+                <div class="card-right">
+                    <div class="video-wrapper">
+                        <video autoplay loop preload="auto" muted>
+                            <source src="Phuong_Tet.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <script>
-        ScrollReveal({distance:'60px',duration:2500,delay:400 });
-        ScrollReveal().reveal('.left', { delay:500, origin: 'left'});
+        ScrollReveal({distance: '60px', duration: 2500, delay: 400});
+        ScrollReveal().reveal('.profile-card', {delay: 500, origin: 'bottom'});
+        ScrollReveal().reveal('.profile-image', {delay: 600, scale: 0.85});
     </script>
-    </body>
+</body>
 </html>

@@ -36,7 +36,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.93) 100%), url('hehe_wife_ww.jpg');
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.35) 100%), url('hehe_wife_ww.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: scroll;

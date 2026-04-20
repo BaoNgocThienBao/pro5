@@ -36,14 +36,11 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.35) 100%), url('hehe_wife_ww.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
+    background: rgba(255, 255, 255, 0.35);
     border-radius: 20px;
     padding: 60px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(1px);
     animation: slideUp 0.8s ease-out;
 }
 
@@ -93,8 +90,8 @@ main {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    border: 8px solid #667eea;
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(102, 126, 234, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -106,28 +103,35 @@ main {
 /* ===== Profile Text ===== */
 .profile-name {
     font-size: 2.5em;
-    color: #333;
+    color: #000000;
     margin-bottom: 10px;
     font-weight: 700;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .profile-subtitle {
     font-size: 1.3em;
-    color: #666;
+    color: #000000;
     margin-bottom: 20px;
     font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .profile-description {
     font-size: 1em;
-    color: #555;
+    color: #000000;
     line-height: 1.6;
     margin-bottom: 40px;
     max-width: 350px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.birthday-countdown {
+    font-size: 0.95em;
+    color: #000000;
+    margin: 10px 0 20px 0;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* ===== Social Links ===== */
@@ -169,6 +173,16 @@ main {
     background: linear-gradient(135deg, #9d4edd 0%, #5a189a 100%);
 }
 
+.social-icon.roblox {
+    background: linear-gradient(135deg, #4facfe 0%, #e0f7ff 100%);
+}
+
+.roblox-img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
 .social-icon:hover {
     transform: translateY(-8px) scale(1.1);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -185,66 +199,168 @@ main {
     align-items: center;
 }
 
-.video-wrapper {
+/* ===== Music Widget ===== */
+.music-widget {
     width: 100%;
-    max-width: 400px;
+    max-width: 320px;
+    background: linear-gradient(135deg, #2d3436 0%, #1e272e 100%);
     border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     animation: fadeIn 1s ease-out 0.3s both;
-    position: relative;
 }
 
-.video-wrapper video {
+.music-thumbnail {
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.thumbnail-img {
     width: 100%;
     height: 100%;
-    display: block;
+    object-fit: cover;
 }
 
-/* ===== Video Controls ===== */
-.video-controls {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.widget-header {
     display: flex;
-    gap: 10px;
-    padding: 15px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.video-wrapper:hover .video-controls {
-    opacity: 1;
+.widget-title {
+    color: white;
+}
+
+.song-label {
+    font-size: 0.85em;
+    color: #b0bec5;
+    margin: 0;
+    margin-bottom: 3px;
+}
+
+.song-name {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.favorite-btn {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #ff6b6b;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.favorite-btn:hover {
+    background: rgba(255, 107, 107, 0.3);
+    transform: scale(1.1);
+}
+
+/* ===== Progress Bar ===== */
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.time-current,
+.time-duration {
+    color: #90a4ae;
+    font-size: 0.8em;
+    min-width: 35px;
+    text-align: center;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.slider {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 100%;
+    height: 16px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* ===== Controls Container ===== */
+.controls-container {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .control-btn {
-    background: rgba(255, 255, 255, 0.9);
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.15);
     border: none;
-    width: 45px;
-    height: 45px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
-    color: #667eea;
+    font-size: 16px;
+    color: white;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .control-btn:hover {
-    transform: scale(1.15);
-    background: white;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-    color: #764ba2;
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
 }
 
 .control-btn:active {
     transform: scale(0.95);
+}
+
+.control-btn.play-btn {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-size: 18px;
+}
+
+.control-btn.play-btn:hover {
+    background: linear-gradient(135deg, #7c8feb 0%, #8b5cb8 100%);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
 /* ===== Responsive Design ===== */
@@ -301,8 +417,14 @@ main {
         font-size: 20px;
     }
 
-    .video-wrapper {
+    .music-widget {
         max-width: 100%;
+        padding: 15px;
+    }
+
+    .music-thumbnail {
+        height: 180px;
+        margin-bottom: 12px;
     }
 }
 
@@ -338,6 +460,36 @@ main {
         width: 45px;
         height: 45px;
         font-size: 18px;
+    }
+
+    .music-widget {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .music-thumbnail {
+        height: 160px;
+        margin-bottom: 10px;
+    }
+
+    .control-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
+    }
+
+    .control-btn.play-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .song-name {
+        font-size: 0.95em;
+    }
+
+    .progress-container {
+        gap: 8px;
     }
 }
         {

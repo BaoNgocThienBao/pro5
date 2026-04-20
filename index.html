@@ -18,7 +18,8 @@
                             <img class="profile-image" src="myface.jpg" alt="Profile Picture">
                         </div>
                         <h1 class="profile-name">About Me</h1>
-                        <p class="profile-subtitle">21 years old</p>
+                        <p class="profile-subtitle" id="userAge">Loading...</p>
+                        <p class="birthday-countdown" id="birthdayCountdown">Loading...</p>
                         <p class="profile-description">Vietnamese student at Dong Nai Technology University (DNTU). Passionate about technology and creative projects.</p>
                         
                         <div class="social-links">
@@ -34,31 +35,61 @@
                             <a href="https://www.twitch.tv/trumxebaonhe1" class="social-icon twitch" title="Twitch" aria-label="Twitch">
                                 <i class="fa-brands fa-twitch"></i>
                             </a>
+                            <a href="https://www.roblox.com/users/607227985/profile" class="social-icon roblox" title="Roblox" aria-label="Roblox">
+                                <img src="roblox_icon.png" alt="Roblox" class="roblox-img">
+                            </a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="card-right">
-                    <div class="video-wrapper">
-                        <video id="bgVideo" autoplay loop preload="auto" muted>
+                    <div class="music-widget">
+                        <div class="music-thumbnail">
+                            <img src="music-thumbnail.jpg" alt="Album Art" class="thumbnail-img">
+                        </div>
+                        
+                        <div class="widget-header">
+                            <div class="widget-title">
+                                <p class="song-label">Now Playing</p>
+                                <p class="song-name">恋は月の蔭に</p>
+                            </div>
+                            <div class="favorite-btn">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                        </div>
+                        
+                        <video id="bgVideo" preload="auto" muted style="display:none;">
                             <source src="Music.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <div class="video-controls">
-                            <button id="playBtn" class="control-btn" title="Play">
+
+                        <div class="progress-container">
+                            <span class="time-current">0:00</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                                <input type="range" id="progressSlider" class="slider" min="0" max="100" value="0">
+                            </div>
+                            <span class="time-duration">0:00</span>
+                        </div>
+
+                        <div class="controls-container">
+                            <button id="prevBtn" class="control-btn" title="Previous">
+                                <i class="fas fa-step-backward"></i>
+                            </button>
+                            <button id="playBtn" class="control-btn play-btn" title="Play">
                                 <i class="fas fa-play"></i>
                             </button>
-                            <button id="pauseBtn" class="control-btn" title="Pause">
+                            <button id="pauseBtn" class="control-btn play-btn" title="Pause" style="display:none;">
                                 <i class="fas fa-pause"></i>
+                            </button>
+                            <button id="nextBtn" class="control-btn" title="Next">
+                                <i class="fas fa-step-forward"></i>
                             </button>
                             <button id="muteBtn" class="control-btn" title="Mute">
                                 <i class="fas fa-volume-up"></i>
                             </button>
                             <button id="unmuteBtn" class="control-btn" title="Unmute" style="display:none;">
                                 <i class="fas fa-volume-mute"></i>
-                            </button>
-                            <button id="fullscreenBtn" class="control-btn" title="Fullscreen">
-                                <i class="fas fa-expand"></i>
                             </button>
                         </div>
                     </div>
@@ -68,51 +99,6 @@
     </main>
     
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-    <script>
-        // ScrollReveal animations
-        ScrollReveal({distance: '60px', duration: 2500, delay: 400});
-        ScrollReveal().reveal('.profile-card', {delay: 500, origin: 'bottom'});
-        ScrollReveal().reveal('.profile-image', {delay: 600, scale: 0.85});
-
-        // Video control functionality
-        const video = document.getElementById('bgVideo');
-        const playBtn = document.getElementById('playBtn');
-        const pauseBtn = document.getElementById('pauseBtn');
-        const muteBtn = document.getElementById('muteBtn');
-        const unmuteBtn = document.getElementById('unmuteBtn');
-        const fullscreenBtn = document.getElementById('fullscreenBtn');
-
-        playBtn.addEventListener('click', () => {
-            video.play();
-            playBtn.style.display = 'none';
-            pauseBtn.style.display = 'flex';
-        });
-
-        pauseBtn.addEventListener('click', () => {
-            video.pause();
-            pauseBtn.style.display = 'none';
-            playBtn.style.display = 'flex';
-        });
-
-        muteBtn.addEventListener('click', () => {
-            video.muted = true;
-            muteBtn.style.display = 'none';
-            unmuteBtn.style.display = 'flex';
-        });
-
-        unmuteBtn.addEventListener('click', () => {
-            video.muted = false;
-            unmuteBtn.style.display = 'none';
-            muteBtn.style.display = 'flex';
-        });
-
-        fullscreenBtn.addEventListener('click', () => {
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if (video.webkitRequestFullscreen) {
-                video.webkitRequestFullscreen();
-            }
-        });
-    </script>
+    <script src="function.js"></script>
 </body>
 </html>

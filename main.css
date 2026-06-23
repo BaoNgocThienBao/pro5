@@ -327,6 +327,19 @@ main {
     flex-wrap: wrap;
 }
 
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 6px;
+}
+
+.volume-slider {
+    width: 80px;
+    accent-color: #667eea;
+    cursor: pointer;
+}
+
 .control-btn {
     width: 40px;
     height: 40px;
@@ -491,12 +504,4 @@ main {
     .progress-container {
         gap: 8px;
     }
-}
-        {
-        font-size: 3.3em;
-        }
-    .container-information
-        {
-        width:min-content;
-        }
 }
